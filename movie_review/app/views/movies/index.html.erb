@@ -1,26 +1,17 @@
 <% if !user_signed_in? %>
-<div class="jumbotron">
-  <h1> Your favorite Movies Reviewed</h1>
-  <p> HALOOOO
-
-  </p> 
-  <p><%= link_to "Sign Up to Write A Review" , new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-
-</div>
+  <div class="jumbotron">
+    <h1>Your Favorite Movies Reviewed</h1>
+    <p> Just watched a movie over the weekend? Sign up and let us know how it was!</p>
+    <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
 <% end %>
+
 <div class="row">
   <% @movies.each do |movie| %>
-<div class="col-sm-6 col-md-3">
-<div class="thumbnail">
-  <%= link_to (image_tag movie.image.url(:medium), class: 'image'), movie %>
-
-
-
-  </div>
-  </div>
-
-
-
-
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag movie.image.url(:medium), class: 'image'), movie %>
+      </div>
+    </div>
   <% end %>
 </div>
